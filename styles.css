@@ -6,46 +6,26 @@
     padding: 20px;
 }
 
-.search-container {
-    position: relative;
-}
-
 #ingredientInput {
-    width: 100%;
+    width: calc(100% - 100px);
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.suggestion-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: calc(100% - 2px); /* Adjusted width */
-    max-height: 200px;
-    overflow-y: auto;
-    border: 1px solid #ccc;
-    border-top: none;
-    border-radius: 0 0 5px 5px;
-    background-color: #fff;
-    z-index: 1;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-.suggestion-item {
-    padding: 8px 10px;
+li {
     cursor: pointer;
 }
 
-.suggestion-item:hover {
-    background-color: #f0f0f0;
-}
-
-#searchButton {
-    display: block;
-    width: 100%;
+button {
     padding: 10px;
-    margin-top: 10px;
+    margin-left: 10px;
     background-color: #4CAF50;
     color: #fff;
     border: none;
