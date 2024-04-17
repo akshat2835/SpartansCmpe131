@@ -1,5 +1,3 @@
-/* styles.css */
-
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -35,4 +33,18 @@ button {
 
 #searchResults {
     margin-top: 20px;
+}
+
+/* New styles for the modal */
+.meal-modal {
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Style the image within the modal */
+.meal-modal img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
