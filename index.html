@@ -22,39 +22,29 @@
         <h1>Find Recipes</h1>
         <p>Enter ingredients to find recipes:</p>
 
-        <div class = "searchbox">
-            <input type = "text" class = "search-control" placeholder="Enter an ingredient" id = "search-input">
-            <button type="submit" class = "search-btn btn" id = "search-btn">Search</button>
-          </div>
+        <div class="searchbox">
+            <input type="text" class="search-control" placeholder="Enter an ingredient" id="search-input">
+            <button type="submit" class="search-btn btn" id="search-btn">Search</button>
         </div>
+    </div>
 
-        <div class = "meal-result">
-            <h2 class = "title">Your Search Results:</h2>
-            <div id= "meal">
-            </div>
-            </div>
+    <div class="meal-result">
+        <h2 class="title">Your Search Results:</h2>
+        <div id="meal"></div>
+        <div class="meal-details">
+            <button id="button" class="btn recipe-close-btn" id="recipe-close-btn">Close</button>
+            <div class="meal-details-content"></div>
         </div>
+    </div>
 
-
-          <div class = "meal-details">
-            <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn">Close Recipes</button>
     
-            <div class = "meal-details-content">
-              </div>
-            </div>
-          </div>
 
-        <!-- Login button -->
-        <button id="loginButton">Login</button>
+    <!-- Login button -->
+    <button id="loginButton">Login</button>
 
-        <!-- Share button -->
-        <button id="shareButton">Share</button>
-    </div>
-    <div id="modal">
-        <div id="modal-content">
-            <span id="modal-close">&times;</span>
-        </div>
-    </div>
+    <!-- Share button -->
+    <button id="shareButton">Share</button>
+    
     <script src="script.js"></script>
     <script src="client.js"></script>
 </body>
