@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+      <div class="nav">
+        <div class="logo">
+          <img src="logo.png" alt="" width="60px" height="60px">
+          <span style="font-size: 20px;font-weight: 600 ;">Food <span style="color: #64db6d;">Recipes</span></span>
+        </div>
+        <div style="display: flex;">
+          <div class="decor">Find</div>
+        <div class="decor">Perfect</div>
+        <div class="decor">Recipe</div>
+        </div>
+      </div>
+      <div class="query-container">
+          <h1 style="text-align: center;margin-bottom: 20px;">Find Recipes</h1>
+          <p>Enter ingredients to find recipes:</p>
+        <div class = "searchbox">
+            <input type = "text" class = "search-control" placeholder="Enter an ingredient" id = "search-input">
+            <button type="submit" class = "search-btn btn" id = "search-btn">Search</button>
+          </div>
+        </div>
+        </div>
+
+        <div class = "meal-result">
+            <h2 class = "title">Your Search Results:</h2>
+            <div id= "meal"><div/>
+        </div>
+
+
+          <div class = "meal-details">
+            <button type = "button"  class = "btn recipe-close-btn" id = "recipe-close-btn">Close Recipes</button>
+    
+            <div class = "meal-details-content">
+              
+            </div>
+            </div>
+          </div>
+
+
+        <button id="shareButton">Share</button>
+    </div>
+    
+</body>
+    <script src="client.js"></script>
+</html>
