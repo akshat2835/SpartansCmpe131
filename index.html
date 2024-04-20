@@ -1,51 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Search</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .container {
-            position: relative;
-        }
-
-        #loginButton {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Find Recipes</h1>
-        <p>Enter ingredients to find recipes:</p>
-
-        <div class="searchbox">
-            <input type="text" class="search-control" placeholder="Enter an ingredient" id="search-input">
-            <button type="submit" class="search-btn btn" id="search-btn">Search</button>
+      <div class="nav">
+        <div class="logo">
+          <img src="logo.png" alt="" width="60px" height="60px" />
+          <span style="font-size: 20px; font-weight: 600"
+            >Food <span style="color: #64db6d">Recipes</span></span
+          >
         </div>
+        <div style="display: flex">
+          <div class="decor">Find</div>
+          <div class="decor">Perfect</div>
+          <div class="decor">Recipe</div>
+        </div>
+      </div>
+      <h2 style="text-align: center; margin-top: 20px">Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <p id="error-message" class="error-message" style="color: red"></p>
     </div>
 
-    <div class="meal-result">
-        <h2 class="title">Your Search Results:</h2>
-        <div id="meal"></div>
-        <div class="meal-details">
-            <button id="button" class="btn recipe-close-btn" id="recipe-close-btn">Close</button>
-            <div class="meal-details-content"></div>
-        </div>
-    </div>
-
-    
-
-    <!-- Login button -->
-    <button id="loginButton">Login</button>
-
-    <!-- Share button -->
-    <button id="shareButton">Share</button>
-    
     <script src="script.js"></script>
-    <script src="client.js"></script>
-</body>
+  </body>
 </html>

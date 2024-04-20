@@ -1,50 +1,126 @@
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-#ingredientInput {
-    width: calc(100% - 100px);
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.nav {
+  display: flex;
+  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(
+    to right,
+    #fc4a1a,
+    #f7b733
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-
-ul {
-    list-style-type: none;
-    padding: 0;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-
-li {
-    cursor: pointer;
+.decor {
+  width: 240px;
+  height: 60px;
+  background-color: orangered;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-
-button {
-    padding: 10px;
-    margin-left: 10px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.query-container {
+  width: 100vh;
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-
-#searchResults {
-    margin-top: 20px;
+.query-container input {
+  width: 400px;
+  height: 20px;
+  padding: 20px;
 }
-
-/* New styles for the modal */
-.meal-modal {
-    max-width: 400px;
-    padding: 20px;
+.searchbox {
+  display: flex;
+  gap: 10px;
 }
-
-/* Style the image within the modal */
-.meal-modal img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.searchbox button {
+  padding: 10px 20px;
+  color: white;
+  background-color: orangered;
+  border: none;
+  cursor: pointer;
+}
+.meal-details-content {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.recipe img {
+  width: 300px;
+  height: 300px;
+}
+.recipe {
+  padding: 20px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.meal-details button {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 20px;
+  display: none;
+}
+.meal-details {
+  width: 100vw;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+}
+.recipe-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+#shareButton {
+  color: white;
+  background-color: orangered;
+  padding: 10px 20px;
+  border: none;
+  margin-left: 40px;
+  display: none;
+}
+#login-form {
+  padding-left: 630px;
+  margin-top: 30px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  margin-top: 20px;
+}
+.form-group input {
+  width: 400px;
+  height: 20px;
+  padding: 20px;
+}
+#login-form button {
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  margin-top: 20px;
+  border: none;
 }
