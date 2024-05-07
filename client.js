@@ -48,22 +48,64 @@ document.addEventListener("DOMContentLoaded", () => {
       recipeDiv.appendChild(recipeTitle);
       recipeDiv.appendChild(recipeImage);
 
+      recipeDiv.addEventListener("click", async () => {
+        try {
+          const recipeDetailsResponse = await fetch(
+            `https://api.spoonacular.com/recipes/${suggestion.id}/information?includeNutrition=true&apiKey=7e8fb5d6e82849a989bfa354fa243b89`
+          );
+          const recipeDetails = await recipeDetailsResponse.json();
+          renderRecipeDetails(recipeDetails);
+        } catch (error) {
+          console.error("Error fetching recipe details:", error);
+        }
+      });
+
       mealDetailsContent.appendChild(recipeDiv);
     });
-    const closeButton = document.getElementById("recipe-close-btn");
-    const shareButton = document.getElementById("shareButton");
-    closeButton.style.display = "block";
-    shareButton.style.display = "block";
+  }
+
+  function renderRecipeDetails(recipe) {
+    mealDetailsContent.innerHTML = ""; // Clear previous content
+
+    const recipeDetailsDiv = document.createElement("div");
+    recipeDetailsDiv.classList.add("recipe-details");
+
+    const recipeTitle = document.createElement("h2");
+    recipeTitle.textContent = recipe.title;
+
+    const recipeImage = document.createElement("img");
+    recipeImage.src = recipe.image;
+    recipeImage.alt = recipe.title;
+
+    const recipeInstructions = document.createElement("p");
+    recipeInstructions.textContent = recipe.instructions;
+
+    const nutritionFacts = document.createElement("div");
+    nutritionFacts.classList.add("nutrition-facts");
+    nutritionFacts.innerHTML = "<h3>Nutritional Facts</h3>";
+
+// Display nutritional information
+for (const nutrient of recipe.nutrition.nutrients) {
+  const nutrientElement = document.createElement("p");
+  nutrientElement.textContent = `${nutrient.name}: ${nutrient.amount} ${nutrient.unit}`;
+  nutritionFacts.appendChild(nutrientElement);
+}
+
+
+
+    recipeDetailsDiv.appendChild(recipeTitle);
+    recipeDetailsDiv.appendChild(recipeImage);
+    recipeDetailsDiv.appendChild(recipeInstructions);
+    recipeDetailsDiv.appendChild(nutritionFacts);
+
+    const closeButton = document.createElement("button");
+    closeButton.textContent = "Close";
     closeButton.addEventListener("click", () => {
       mealDetailsContent.innerHTML = "";
-      closeButton.style.display = "none";
-      shareButton.style.display = "none";
+      renderSuggestions(savedSuggestions); // Re-render the original suggestions
     });
+
+    mealDetailsContent.appendChild(recipeDetailsDiv);
+    mealDetailsContent.appendChild(closeButton);
   }
-  shareButton.addEventListener("click", () => {
-    const input = searchInput.value.trim();
-    window.location.href = `https://api.spoonacular.com/recipes/findByIngredients?ingredients=${encodeURIComponent(
-      input
-    )}&apiKey=7e8fb5d6e82849a989bfa354fa243b89`;
-  });
 });
